@@ -1,0 +1,25 @@
+[user]
+	email = 
+	name = 
+
+[alias]
+	amend = commit --amend --no-edit
+	amend-add = commit -a --amend --no-edit
+  bclean = "!git branch --merged | grep -v -P '^\\*|master|develop|dev' | xargs -n1 -r git branch -d"
+  co = checkout
+	cob = checkout -b
+  lg = log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+  mt = mergetool
+	pf = push --force-with-lease
+	s = status
+	u = pull
+
+[merge]
+    tool = diffmerge
+[mergetool "diffmerge"]
+	trustExitCode = true
+	cmd = C:/Program\\ Files/SourceGear/Common/DiffMerge/sgdm.exe        -merge -result=\"$MERGED\" \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+  
+[core]
+	autocrlf = true
+  
